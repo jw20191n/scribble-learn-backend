@@ -10,11 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_145343) do
+ActiveRecord::Schema.define(version: 2019_11_20_183026) do
+
+  create_table "admins", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.string "name"
+    t.string "passcode"
+    t.string "description"
+    t.integer "admin_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "students", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.integer "lesson_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "words", force: :cascade do |t|
+    t.string "text"
+    t.integer "lesson_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
