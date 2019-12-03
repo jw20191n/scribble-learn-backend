@@ -4,7 +4,7 @@ class CreateStudents < ActiveRecord::Migration[6.0]
       t.string :username
       t.string :password_digest
       t.integer :lesson_id
-
+      t.integer :score
       t.timestamps
     end
   end
