@@ -22,16 +22,15 @@ ActiveRecord::Schema.define(version: 2019_12_03_202757) do
   create_table "guessrights", force: :cascade do |t|
     t.integer "student_id"
     t.integer "word_id"
+    t.integer "drawer_id"
     t.integer "lesson_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "lessons", force: :cascade do |t|
-    t.string "name"
-    t.string "passcode"
-    t.string "description"
     t.integer "admin_id"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
